@@ -10,7 +10,7 @@ The base source for FakeSmtp comes from various free sources available on the ne
 
 FakeSmtp is very easy to use, just double click the executable or run it from a command line. There are no command line options.
 
-The tool listens on port 25 for emails messages.
+The tool listens on port 25 for email messages.
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
