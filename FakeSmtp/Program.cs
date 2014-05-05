@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Threading;
+using System.Linq;
 
 namespace FakeSmtp
 {
@@ -10,10 +11,11 @@ namespace FakeSmtp
         static void Main(string[] args)
         {
             SMTPServer server = new SMTPServer();
-            server.RunServer();
+            bool outputToFile = args.All(a => a != "--no-files");
+            server.RunServer(outputToFile);
         }
 
-        public void RunServer()
+        public void RunServer(bool outputToFile)
         {
             MailListener listener = null;
             int port = 25;
@@ -22,7 +24,7 @@ namespace FakeSmtp
             {
                 Console.WriteLine("New MailListener started on port {0}.", port);
                 listener = new MailListener(this, IPAddress.Loopback, port);
-                listener.OutputToFile = true;
+                listener.OutputToFile = outputToFile;
                 listener.Start();
                 while (listener.IsThreadAlive)
                 {
