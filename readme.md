@@ -8,7 +8,9 @@ The base source for FakeSmtp comes from various free sources available on the ne
 
 ##Usage
 
-FakeSmtp is very easy to use, just double click the executable or run it from a command line. There are no command line options.
+FakeSmtp is very easy to use, just double click the executable or run it from a command line. By default, emails are formatted in HTML and written to disk.
+
+To use FakeSmtp purely from the console and prevent files from being written to disk, use the `--no-files` command line argument.
 
 The tool listens on port 25 for email messages.
 
