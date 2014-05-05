@@ -16,11 +16,12 @@ namespace FakeSmtp
         public void RunServer()
         {
             MailListener listener = null;
+            int port = 25;
 
             do
             {
-                Console.WriteLine("New MailListener started");
-                listener = new MailListener(this, IPAddress.Loopback, 25);
+                Console.WriteLine("New MailListener started on port {0}.", port);
+                listener = new MailListener(this, IPAddress.Loopback, port);
                 listener.OutputToFile = true;
                 listener.Start();
                 while (listener.IsThreadAlive)
