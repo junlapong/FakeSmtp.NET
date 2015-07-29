@@ -18,4 +18,4 @@ The tool listens on port 25 for email messages.
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
 ## Retard
-I'm exercising my free speach by saying that this program is so easy a retard could use it.
+I'm exercising my free speech by saying that this program is so easy a retard could use it.
