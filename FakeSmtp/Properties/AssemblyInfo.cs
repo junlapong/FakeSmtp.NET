@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FakeSmtp")]
 [assembly: AssemblyDescription("A light-weight 'fake' smtp server for testing.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Deacon Software")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FakeSmtp")]
-[assembly: AssemblyCopyright("Copyright © Deacon Software  2012-2013")]
+[assembly: AssemblyCopyright("C")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
