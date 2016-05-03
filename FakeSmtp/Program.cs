@@ -12,10 +12,11 @@ namespace FakeSmtp
         {
             SMTPServer server = new SMTPServer();
             bool outputToFile = args.All(a => a != "--no-files");
-            server.RunServer(outputToFile);
+            string outputFolder = "mail/";
+            server.RunServer(outputToFile, outputFolder);
         }
 
-        public void RunServer(bool outputToFile)
+        public void RunServer(bool outputToFile, string outputFolder)
         {
             MailListener listener = null;
             int port = 25;
@@ -23,7 +24,7 @@ namespace FakeSmtp
             do
             {
                 Console.WriteLine("New MailListener started on port {0}.", port);
-                listener = new MailListener(this, IPAddress.Loopback, port);
+                listener = new MailListener(this, IPAddress.Loopback, port, outputFolder);
                 listener.OutputToFile = outputToFile;
                 listener.Start();
                 while (listener.IsThreadAlive)
