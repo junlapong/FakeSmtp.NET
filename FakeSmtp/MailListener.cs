@@ -25,11 +25,11 @@ namespace FakeSmtp
         const string CONTENT_TRANSFER_ENCODING = "Content-Transfer-Encoding: ";        
 
 
-        public MailListener(SMTPServer aOwner, IPAddress localaddr, int port)
+        public MailListener(SMTPServer aOwner, IPAddress localaddr, int port, string outputFolder)
             : base(localaddr, port)
         {
             owner = aOwner;
-            OutputDirectory = "mail/";
+            OutputDirectory = outputFolder;
         }
 
         new public void Start()
@@ -78,6 +78,7 @@ namespace FakeSmtp
 
                             while (line != null && line != ".")
                             {
+                                System.Diagnostics.Debug.WriteLine(line.ToString());
                                 if (line.StartsWith(SUBJECT))
                                 {
                                     subject = line.Substring(SUBJECT.Length);
